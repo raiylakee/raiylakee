@@ -67,6 +67,38 @@
 
         .left .socials a:hover svg { fill: #8bb8fa; }
 
+        .left .now {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #8a92a0;
+            margin-bottom: 28px;
+            letter-spacing: 0.02em;
+        }
+
+        .left .now .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #7fb069;
+            flex-shrink: 0;
+            animation: pulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(127, 176, 105, 0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(127, 176, 105, 0); }
+        }
+
+        .left .now .label {
+            color: #5c6675;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.7rem;
+        }
+
         .left nav {
             display: flex;
             flex-direction: column;
@@ -176,6 +208,26 @@
         .blog-entry .title { color: #c8cdd3; font-size: 0.95rem; }
         .blog-entry .title:hover { color: #8bb8fa; }
         .blog-entry .date { color: #3d6ea8; font-size: 0.85rem; margin-left: 8px; }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid #161a20;
+            font-size: 0.78rem;
+            color: #555d6b;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            line-height: 1.7;
+        }
+
+        .footer .colophon span {
+            display: block;
+        }
+
+        .footer a { color: #5c6675; }
+        .footer a:hover { color: #8bb8fa; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -205,6 +257,7 @@
 
             <nav>
                 <a href="resume.pdf">Resume</a>
+                <a href="rcv.pdf">CV</a>
             </nav>
         </div>
 
@@ -214,7 +267,20 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="colophon">
+            <span>&copy; <span id="year"></span> M. Raiyan Al Fikri.</span>
+        </div>
+        <div class="colophon">
+            <span>Source: <a href="https://github.com/raiylakee" rel="noopener">github.com/raiylakee</a></span>
+        </div>
+    </footer>
+
 </div>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
